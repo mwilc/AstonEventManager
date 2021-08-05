@@ -16,7 +16,7 @@ var commentRoutes = require('./routes/comments');
 var eventRoutes = require('./routes/events');
 var indexRoutes = require('./routes/index');
 
-mongoose.connect('mongodb+srv://ox:Remember1@cluster0.8d857.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://ox:@astoneventmanager@cluster0.8d857.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
