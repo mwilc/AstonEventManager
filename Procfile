@@ -1,1 +1,0 @@
-command: node app.js
