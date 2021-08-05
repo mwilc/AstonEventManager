@@ -8,14 +8,12 @@ router.get('/', function(req, res){
   res.render('index');
 });
 
-//Auth routes
-
-//Get register form
+//register form
 router.get('/register', function(req, res){
   res.render('register');
 });
 
-//Handle signup logic
+//signup logic
 router.post('/register', function(req, res){
   console.log(req.body)
   var newUser = new User({username: req.body.username, email: req.body.email, type: req.body.type});
@@ -30,12 +28,12 @@ router.post('/register', function(req, res){
   });
 });
 
-//Get login form
+//login form
 router.get('/login', function(req, res){
   res.render('login');
 });
 
-//Handle login logic
+//login logic
 router.post('/login', passport.authenticate('local',
   {
     successRedirect: '/events',
@@ -50,7 +48,7 @@ router.get('/logout', function(req, res){
 });
 
 
-//Middleware
+//authentication
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();

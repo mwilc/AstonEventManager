@@ -97,7 +97,7 @@ router.delete('/events/:id',  checkEventOwnership, function(req, res){
   });
 });
 
-//Middleware
+//Authentication
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();

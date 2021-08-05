@@ -16,8 +16,6 @@ var commentRoutes = require('./routes/comments');
 var eventRoutes = require('./routes/events');
 var indexRoutes = require('./routes/index');
 
-// seedDB(); // Seed the db
-// mongoose.connect('mongodb://localhost/eventdb');
 mongoose.connect('mongodb+srv://ox:Remember1@cluster0.8d857.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -37,7 +35,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//Middleware for passing currentUser to all templates
+//passing currentUser to all templates
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
   next();
