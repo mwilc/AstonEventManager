@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+
+  <div class="container">
+    <br>
+    <h2>Events</h2>
+    <% events.forEach(function(event){ %>
+      <br>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= event.title %></h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <p class="card-text"><%= event.title %></p>
+        <a href="/events/<%= event._id %>" class="card-link">More Info</a>
+
+        <!-- <a href="#" class="card-link">Another link</a> -->
+      </div>
+
+    </div>
+    <% }) %>
+    <br>
+    <a href="/events/new"><button type="button" name="button" class="btn btn-primary">Add New Event</button></a>
+  </div>
+
+  <% include ./partials/footer %>
